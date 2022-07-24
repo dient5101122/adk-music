@@ -1,0 +1,33 @@
+{%extends 'musics/basic.html'%}
+{% block title %}Musics{% endblock %}
+
+{% block body %}
+{% load static %} 
+<h1 class="watchlater">Watch Later</h1>
+
+{% if song|length < 1 %}
+        <h3 class="watch">You have no Video in your Watch Later</h3>
+{% endif %}
+
+<div class="container">
+{% for i in song reversed %}
+<div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="/media/{{i.image}}" class="card-img" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{i.name}}</h5>
+          <p class="card-text">Tags: {{i.tags}}</p>
+        <p class="card-text">Movie: {{i.movie}}</p>
+          <a href="/musics/songs/{{i.song_id}}"><button class="btn btn-outline-danger">Listen Song</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</div>
+
+{% endblock %}

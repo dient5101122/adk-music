@@ -1,0 +1,79 @@
+/*basic*/
+a.nav-link {
+  color: white;
+}
+
+/*index*/
+div.card-img {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 35rem;
+}
+
+h2.TrendingSongs {
+  padding-left: 8%;
+  padding-top: 2%;
+  font-family: "Verdana";
+  color: blue;
+}
+
+p.card-text {
+  color: green;
+}
+
+div.row {
+  padding-top: 2%;
+  padding-left: 7%;
+}
+
+div.Trend {
+  padding-left: 2%;
+  padding-top: 1%;
+}
+
+/*songpost - search*/
+h5.word {
+  padding-top: 2%;
+  font-weight: 550;
+}
+
+div.search {
+  background-color: lightgrey;
+  color: blue;
+  text-align: center;
+  padding-top: 2%;
+}
+
+audio.audio {
+  padding-top: 2%;
+  width: 1200px;
+}
+
+h2.name {
+  padding-top: 6%;
+  font-weight: 850;
+  color: green;
+  text-align: center;
+}
+
+/*watchlater*/
+div.card {
+  max-width: 940px;
+  padding-top: 0%;
+}
+
+h3.watch {
+  text-align: center;
+  padding-top: 5%;
+}
+
+h1.watchlater {
+  color: rgb(158, 60, 60);
+  text-align: center;
+}
+
+h5.card-title {
+  color: green;
+  font-weight: 550;
+}

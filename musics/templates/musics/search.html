@@ -1,0 +1,55 @@
+{%extends 'musics/basic.html'%}
+{% block title %}All Songs{% endblock %}
+
+{% block body %}
+
+{% if message%}
+<script>
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: '{{message}}',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    </script>
+{% endif %}
+<div class="search">
+  <h1>Your search result for {{query}}:</h1>
+</div>
+
+{% for song in songs reversed %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6" style="padding-top: 3%;">
+            <img src="/media/{{song.image}}" alt="" height="350px" width="525px">
+        </div>
+        <div class="col-md-6" style="padding-top: 1%;">
+            <h2 class="name">{{song.name}}</h2>
+            <h5 class="word">Category: {{song.tags}}</h5>
+            <h5 class="word">Movie: {{song.movie}}</h5>
+            <h5 class="word">Singer: {{song.singer}}</h5>
+            <div style="padding-top: 2%;">
+                <div class="row" style="padding-left: 3%">
+                    <form action="/musics/watchlater" method="POST">{% csrf_token %}
+                        <input type="hidden" name="video_id" value="{{song.song_id}}">
+                        <button type="submit" class="btn btn-outline-danger" id="submit_btn">Add to Listen Later</button>
+                    </form>
+                    <a download href="/media/{{song.song}}" style="padding-left: 2%;"><button class="btn btn-outline-danger">Download Song</button></a>
+                </div>
+            </div>
+        </div>
+            <audio class="audio" controls>
+                <source src="/media/{{song.song}}" type="audio/mpeg">
+            </audio>
+            <textarea class="lyric" style="height: 600px; width: 100%; background-color: powderblue;">Lyric:
+            {{song.Lyric}}</textarea>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}
+{% block js %}
+
+{% endblock%}
